@@ -4,18 +4,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+  styleUrls: ['./search.component.css'] // ✅ Corrected 'styleUrls'
 })
 export class SearchComponent implements OnInit {
-doSearch(value:string){
-  console.log(`value=${value}`);
-  this.router.navigateByUrl(`/search/${value}`);
-}
- constructor(private router: Router){}
 
+  doSearch(value: string) {
+    console.log(`value=${value}`);
+    this.router.navigateByUrl(`/search/${value}`);
+  }
 
- ngOnInit(): void {
-   
- }
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {}
 }
